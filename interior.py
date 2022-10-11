@@ -121,6 +121,19 @@ class SingleLinkedList:
                 previous_node.next = remove_node.next
                 remove_node.next = None
             self.length-=1
+
+    def insert_new_node(self, index, value):
+        if index <= self.length and index > 1: 
+            new_node = self.Node(value)
+
+            current_node = self.get_node(index-1)
+            new_node.next  = current_node.next
+            current_node.next = new_node
+            self.length+=1
+        elif index == 1:
+            self.push_head_node(value)
+        elif index == self.length+1:
+            self.push_node(value)
     
 
 
