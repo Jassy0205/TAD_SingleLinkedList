@@ -122,7 +122,20 @@ class SingleLinkedList:
                 remove_node.next = None
             self.length-=1
     
+    def reverse_nodes(self):
+        if self.length == 0:
+            print('No hay datos')
+        else:
+            current_node = self.head
+            prev_node = None
 
+            while current_node is not None:
+                next_node = current_node.next
+                current_node.next = prev_node 
+                prev_node = current_node
+                current_node = next_node 
+            
+            self.head = prev_node
 
 
             
