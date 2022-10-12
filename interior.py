@@ -128,6 +128,7 @@ class SingleLinkedList:
         else:
             current_node = self.head
             prev_node = None
+            self.tail = current_node
 
             while current_node is not None:
                 next_node = current_node.next
